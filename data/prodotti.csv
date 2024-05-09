@@ -1,0 +1,10 @@
+ID,Nome,Prezzo,Quantità,Categoria,Immagine
+1,Pane,1.5,10,Alimenti,'/workspace/Amazon-Flask/data/images/pane.jpg'
+2,Latte,0.8,20,Alimenti,'/workspace/Amazon-Flask/data/images/latte.jpg'
+3,Frutta,2.0,15,Alimenti,'/workspace/Amazon-Flask/data/images/frutta.jpg'
+4,Pane,1.5,10,Alimenti,'/workspace/Amazon-Flask/data/images/pane.jpg'
+5,Latte,0.8,20,Alimenti,'/workspace/Amazon-Flask/data/images/latte.jpg'
+6,Frutta,2.0,15,Alimenti,'/workspace/Amazon-Flask/data/images/frutta.jpg'
+7,Pane,1.5,10,Alimenti,'/workspace/Amazon-Flask/data/images/pane.jpg'
+8,Latte,0.8,20,Alimenti,'/workspace/Amazon-Flask/data/images/latte.jpg'
+9,Frutta,2.0,15,Alimenti,'/workspace/Amazon-Flask/data/images/frutta.jpg'
