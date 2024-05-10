@@ -7,13 +7,15 @@ import pandas as pd
 
 app = Flask(__name__)
 
+df = pd.read_csv('/workspace/Amazon-Flask/data/prodotti.csv')
+
 @app.route('/')
 def home():
     return render_template('amazon.html')
 
 @app.route('/elenco')
 def elenco():
-    return 
+    return render_template('amazon.html', prodotti=df['Immagine'].tolist())
 
 @app.route('/prodotto')
 def prodotto():

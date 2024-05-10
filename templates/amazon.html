@@ -7,7 +7,9 @@
         <link rel="stylesheet" href="{{ url_for('static', filename='css/amazon.css') }}">
     </head>
     <body>
-        
+        {% for img in prodotti %}
+        </a><img src="{{ img['Immagine'] }}" alt="{{ product.Nome }} width="300" height="300" /></a> <br />
+        {% endfor %}
         <script src="{{ url_for('static', filename='js/amazon.js') }}"></script>
     </body>
 </html>
