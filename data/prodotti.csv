@@ -1,10 +1,7 @@
 ID,Nome,Prezzo,Quantità,Categoria,Immagine
-1,Pane,1.5,10,Alimenti,'/workspace/Amazon-Flask/data/images/pane.jpg'
-2,Latte,0.8,20,Alimenti,'/workspace/Amazon-Flask/data/images/latte.jpg'
-3,Frutta,2.0,15,Alimenti,'/workspace/Amazon-Flask/data/images/frutta.jpg'
-4,Pane,1.5,10,Alimenti,'/workspace/Amazon-Flask/data/images/pane.jpg'
-5,Latte,0.8,20,Alimenti,'/workspace/Amazon-Flask/data/images/latte.jpg'
-6,Frutta,2.0,15,Alimenti,'/workspace/Amazon-Flask/data/images/frutta.jpg'
-7,Pane,1.5,10,Alimenti,'/workspace/Amazon-Flask/data/images/pane.jpg'
-8,Latte,0.8,20,Alimenti,'/workspace/Amazon-Flask/data/images/latte.jpg'
-9,Frutta,2.0,15,Alimenti,'/workspace/Amazon-Flask/data/images/frutta.jpg'
+1,Pane,1.5,10,Alimenti,"https://www.cucchiaio.it/content/dam/cucchiaio/it/ricette/2024/01/pane-fatto-in-casa-veloce/pane-veloce-anteprima.jpg"
+2,Latte,0.8,20,Alimenti,"https://www.my-personaltrainer.it/2022/09/08/latte-e-salute_900x760.jpeg"
+3,Frutta,2.0,15,Alimenti,"https://www.cure-naturali.it/.imaging/default/dam/cure-naturali/enciclopedia-naturale/alimentazione/frutta-elenco-e-propriet-.jpg/jcr:content.jpg"
+4,Carne,5.0,6,Alimenti,"https://www.fondazioneveronesi.it/uploads/thumbs/2018/05/17/cottura-carne_thumb_720_480.jpg"
+5,Pesce,6.5,6,Alimenti,"https://www.wineandfoodtour.it/wp-content/uploads/2023/07/pesce-e-metalli-nocivi.jpg"
+6,Pasta,2.0,10,Alimenti,"https://mag.valoresalute.it/thumbnail/57/7f/d8/1693392217/Pasta_1920x1920.jpeg"
