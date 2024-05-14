@@ -12,7 +12,7 @@
         <div class="row">
             {% for prodotto in prodotti %}
             <div class="col-md-6 mb-4">
-                    <img  src="{{ prodotto }}" width="600px" height="400px" onclick="getProduct('{{prodotto.ID}}')"> <br />
+                    <img  src="{{ prodotto }}" width="600px" height="400px" onclick="getProduct('{{prodotto.Name}}')"> <br />
             </div>
             {% endfor %}
         </div>

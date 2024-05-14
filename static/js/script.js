@@ -15,7 +15,7 @@ function getProduct(name)
     console.log(name)
     product_title.innerHTML = name;
     console.log(JSON.stringify({productName: name}));
-    fetch('https://3245-daniele0777-amazonflask-3anoiuffwx8.ws-eu111.gitpod.io/productget', {
+    fetch('https://3245-daniele0777-amazonflask-4gdxgsfvs4q.ws-eu111.gitpod.io/productget', {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
