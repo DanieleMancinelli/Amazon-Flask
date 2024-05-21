@@ -11,21 +11,16 @@ df = pd.read_csv('/workspace/Amazon-Flask/data/prodotti.csv')
 
 @app.route('/')
 def homepage():
-    return render_template('amazon.html', prodotti=df['Immagine'].tolist())
+    return render_template('amazon.html', prodotti=df.to_dict('records'))
 
-@app.route('/productget', methods=['POST'])
-def products():
-    if request.method == "POST":
-        json = request.get_json()
-        productName = json.get('productName')
-        print(productName)
-        getData = df[df['Nome'] == productName]
-        print(getData)
-        if len(getData) == 0:
-            print('errore')
-            return { "code": 302 }
-        print('corretto')
-        return { "code": 200, "data": getData.to_json(orient='records') }
+@app.route('/elenco', methods=['POST'])
+def elenco():
+    if request.method == 'POST':
+        json_data = request.get_json()
+        NomeProdotto = json_data.get('NomeProdotto')
+        data = df[df['Nome'] == NomeProdotto]
+        data = data.to_dict(orient = 'records')
+        return jsonify(data), 200
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=3245, debug=True)

@@ -1,39 +1,57 @@
-var maincontainer = document.getElementById('maincontainer');
-var infocontainer = document.getElementById('infocontainer');
+function getProdotto(richiesta) {
 
-// INFO CONTAINER THINGS
-var product_title = document.querySelector('#product-title');
-var product_image = document.querySelector('#product-image');
-var prezzo = document.querySelector('#prezzo');
-var quantita = document.querySelector('#quantita');
-var categoria = document.querySelector('#categoria');
+    //visualizza la richiesta
+    console.log(richiesta);
 
-function getProduct(name)
-{
-    maincontainer.style.display = "none";
-    infocontainer.style.display = "block";
-    console.log(name)
-    product_title.innerHTML = name;
-    console.log(JSON.stringify({productName: name}));
-    fetch('https://3245-daniele0777-amazonflask-4gdxgsfvs4q.ws-eu111.gitpod.io/productget', {
+    //funzione per far sparire e riapparire le pagine
+    let mainPage = document.getElementById('mainPage');
+    let infoPage = document.getElementById('infoPage');
+    mainPage.style.display = 'none';
+    infoPage.style.display = 'block';
+
+    //Fetch delle informazioni e la richiesta al server
+    fetch('https://3245-danielemanc-amazonflask-92bzisl2wb5.ws-eu114.gitpod.io/elenco', {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
         },
-        body: JSON.stringify({productName: name}),
-    }).then((response) => response.json())
+        body: JSON.stringify({NomeProdotto: richiesta}),
+    })
+    .then((response) => response.json())
     .then((data) => {
-        const productData = JSON.parse(data.data)[0];
-        console.log(productData);
-        product_image.src = productData['Immagine'];
-        prezzo.innerHTML = `<b>Prezzo</b> ${productData['Prezzo']}€`;
-        quantita.innerHTML = `<b>Quantità Disponibili</b> ${productData['Quantita']}`;
-        categoria.innerHTML = `<b>Categoria Prodotto</b> ${productData['Categoria']}`;
+
+        //visualizza i dati ricevuti
+        console.log(data);
+
+        //Valori
+        let CategoriaValue = data[0]['Categoria'];
+        let NomeValue = data[0]['Nome'];
+        let ImmagineValue = data[0]['Immagine'];
+        let PrezzoValue = data[0]['Prezzo'];
+        let QuantitàValue = data[0]['Quantità'];
+
+        //QuerySelector
+        let Categoria = document.querySelector('.Categoria');
+        let Nome = document.querySelector('.Nome');
+        let Immagine = document.getElementById('Immagine');
+        let Prezzo = document.querySelector('.Prezzo');
+        let Quantità = document.querySelector('.Quantità');
+
+        //Cambio del testo
+        Categoria.innerHTML = 'Categoria del prodotto: '+CategoriaValue;
+        Nome.innerHTML = NomeValue;
+        Immagine.src = ImmagineValue;
+        Prezzo.innerHTML = 'Prezzo: '+PrezzoValue+"/pz";
+        Quantità.innerHTML = 'Quantità: '+QuantitàValue;
+    })
+    .catch((error) => {
+        console.error('Errore nella richiesta fetch:', error);
     })
 }
-
-function goback() 
-{
-    maincontainer.style.display = "block";
-    infocontainer.style.display = "none";
+//bottone per tornare indietro
+function Back() {
+    let mainPage = document.getElementById('mainPage');
+    let infoPage = document.getElementById('infoPage');
+    mainPage.style.display = 'block';
+    infoPage.style.display = 'none';
 }
